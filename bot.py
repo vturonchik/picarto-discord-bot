@@ -3,9 +3,17 @@ import time
 import requests
 
 
+def wait_online():
+    pass
+
+
+def wait_offline():
+    pass
+
+
 def check_online_status(headers):
-    isOnline = False
-    isOffline = False
+    is_online = False
+    is_offline = False
     response = requests.get('https://api.picarto.tv/api/v1/channel/id/Impostor/streams', headers=headers)
     online_status = response.json()['channel']['online']
     if not online_status:
